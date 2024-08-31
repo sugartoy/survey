@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 설문조사</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="initialScreen">
+        <div class="center-content">
+            <img src="your-image.png" alt="Survey Image" class="center-image">
+        </div>
+        <div class="start-button-container">
+            <button id="startSurvey" class="btn">설문 시작</button>
+        </div>
+        <button id="adminMenuButton" class="admin-btn">관리자 메뉴</button>
+    </div>
+
+    <div id="surveyScreen" style="display: none;">
+        <form id="surveyForm">
+            <div class="survey-page" id="page-1">
+                <h2>설문조사 (1/4)</h2>
+                <!-- 첫 번째 페이지의 5개 질문 -->
+                <div class="question">
+                    <p>질문 1: 여기 첫 번째 질문이 들어갑니다.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="1"> 매우 그렇다</label>
+                        <label><input type="radio" name="q1" value="2"> 그렇다</label>
+                        <label><input type="radio" name="q1" value="3"> 보통이다</label>
+                        <label><input type="radio" name="q1" value="4"> 아니다</label>
+                        <label><input type="radio" name="q1" value="5"> 전혀 아니다</label>
+                    </div>
+                </div>
+                <!-- 나머지 4개의 질문도 동일한 구조로 추가 -->
+                <button type="button" class="btn next-btn" onclick="nextPage(2)">다음</button>
+            </div>
+
+            <div class="survey-page" id="page-2" style="display: none;">
+                <h2>설문조사 (2/4)</h2>
+                <!-- 두 번째 페이지의 5개 질문 -->
+                <div class="question">
+                    <p>질문 6: 여기 여섯 번째 질문이 들어갑니다.</p>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="1"> 매우 그렇다</label>
+                        <label><input type="radio" name="q6" value="2"> 그렇다</label>
+                        <label><input type="radio" name="q6" value="3"> 보통이다</label>
+                        <label><input type="radio" name="q6" value="4"> 아니다</label>
+                        <label><input type="radio" name="q6" value="5"> 전혀 아니다</label>
+                    </div>
+                </div>
+                <!-- 나머지 4개의 질문도 동일한 구조로 추가 -->
+                <button type="button" class="btn next-btn" onclick="nextPage(3)">다음</button>
+            </div>
+
+            <div class="survey-page" id="page-3" style="display: none;">
+                <h2>설문조사 (3/4)</h2>
+                <!-- 세 번째 페이지의 5개 질문 -->
+                <!-- 질문을 추가하세요 -->
+                <button type="button" class="btn next-btn" onclick="nextPage(4)">다음</button>
+            </div>
+
+            <div class="survey-page" id="page-4" style="display: none;">
+                <h2>설문조사 (4/4)</h2>
+                <!-- 네 번째 페이지의 5개 질문 -->
+                <!-- 질문을 추가하세요 -->
+                <button type="submit" class="btn">설문 완료</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="adminScreen" style="display: none;">
+        <h2>설문 결과</h2>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>질문 1</th>
+                    <th>질문 2</th>
+                    <th>질문 3</th>
+                    <th>질문 4</th>
+                    <th>질문 5</th>
+                    <th>질문 6</th>
+                    <!-- 추가 질문 열 추가 -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 설문 데이터가 여기에 표시됩니다. -->
+            </tbody>
+        </table>
+        <button onclick="logout()">로그아웃</button>
+    </div>
+
+    <div id="passwordPrompt" style="display: none;">
+        <h2>관리자 로그인</h2>
+        <input type="password" id="adminPassword" placeholder="비밀번호 입력">
+        <button onclick="login()">로그인</button>
+        <button onclick="cancelLogin()">취소</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
